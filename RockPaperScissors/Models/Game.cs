@@ -25,13 +25,13 @@ namespace RockPaperScissors.Models
     public int[] GetScore()
     {return _score;}
 
-    public string GetP1Move()
+    public int GetP1Move()
     {
-      return _playerMoves[0];
+      return _moveSheet[_playerMoves[0]];
     }
-    public string GetP2Move()
+    public int GetP2Move()
     {
-      return _playerMoves[1];
+      return _moveSheet[_playerMoves[1]];
     }
     public string[] GetMoves()
     {
@@ -44,7 +44,7 @@ namespace RockPaperScissors.Models
         _playerMoves[0] = p1.ToLower();
         _playerMoves[1] = p2.ToLower();
 
-        int value = 1 / int.Parse("0");
+        //int value = 1 / int.Parse("0");
       }
       catch (Exception ex)
       {

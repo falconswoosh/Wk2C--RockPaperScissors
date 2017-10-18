@@ -1,23 +1,56 @@
+@using RockPaperScissors.Models;
+@model Game
+
 @{
   Layout = "_Layout";
  }
 <p>Round End</p>
 
 @{
+  var img1 = "";
+  var img2 = "";
+
+  switch (Model.GetP1Move())
+  {
+    case 1:
+    img1 = "/LRock.JPG";
+    break;
+    case 2:
+    img1 = "/LScissors.JPG";
+    break;
+    case 3:
+    img1 = "/LPaper.JPG";
+    break;
+  }
+  switch (Model.GetP2Move())
+  {
+    case 1:
+    img2 = "/RRock.JPG";
+    break;
+    case 2:
+    img2 = "/RScissors.JPG";
+    break;
+    case 3:
+    img2 = "/RPaper.JPG";
+    break;
+  }
   if (@Model.GetScore()[0] > @Model.GetScore()[1])
   {
+    <img src="/img\@img1">
+    <img src="/img\@img2">
     <br><p>"PLAYER 1 IS THE WINNER!"</p><br>
   }
+ if (@Model.GetScore()[0] < @Model.GetScore()[1])
+ {
+   <img src="/img\@img1">
+   <img src="/img\@img2">
+   <br><p>"PLAYER 2 IS THE WINNER!"</p><br>
  }
- @{
-   if (@Model.GetScore()[0] < @Model.GetScore()[1])
-   {
-     <br><p>"PLAYER 2 IS THE WINNER!"</p><br>
-   }
+  if (@Model.GetScore()[0] == @Model.GetScore()[1])
+  {
+    <img src="/img\@img1">
+    <img src="/img\@img2">
+    <br><p>"DRAW!"</p><br>
   }
-  @{
-    if (@Model.GetScore()[0] == @Model.GetScore()[1])
-    {
-      <br><p>"DRAW!"</p><br>
-    }
-   }
+
+}

@@ -70,5 +70,16 @@ namespace RockPaperScissors.Tests
       testObj.SetScore();
       Assert.AreEqual(true,(testObj.GetScore()[0])==(testObj.GetScore()[1]));
     }
+
+    [TestMethod]
+    public void FindAndReplaceStringMethod(string main = "this is not a string." , string tgt = " not " , string src = " ")
+    {
+      if (main.IndexOf(tgt)>-1)
+      {
+        //string newStr = main.Replace(tgt,src);
+      //  Console.WriteLine(newStr);
+      //  Assert.AreEqual(true,main == "this is a string.");
+      }
+    }
   }
 }
