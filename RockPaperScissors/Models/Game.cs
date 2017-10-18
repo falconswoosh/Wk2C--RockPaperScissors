@@ -48,10 +48,8 @@ namespace RockPaperScissors.Models
       }
       catch (Exception ex)
       {
-        Console.WriteLine("Message = '{0}'", ex.Message);
-        Console.WriteLine("Source = '{0}'", ex.Source);
-        Console.WriteLine("StackTrace = '{0}'", ex.StackTrace);
-        // Console.WriteLine("TargetSite = '{0}'", ex.TargetSite);
+        Console.WriteLine("Message = {0}, Source = {1}, StackTrace = {2}", ex.Message, ex.Source, ex.StackTrace);
+
         // for (int i=0;i < _playerMoves.Count();i++)
         // {
         //   // if(_playerMoves[i] != "scissors" && _playerMoves[i] != "rock" && _playerMoves[i] != "paper")
