@@ -1,0 +1,23 @@
+@{
+  Layout = "_Layout";
+ }
+<p>Round End</p>
+
+@{
+  if (@Model.GetScore()[0] > @Model.GetScore()[1])
+  {
+    <br><p>"PLAYER 1 IS THE WINNER!"</p><br>
+  }
+ }
+ @{
+   if (@Model.GetScore()[0] < @Model.GetScore()[1])
+   {
+     <br><p>"PLAYER 2 IS THE WINNER!"</p><br>
+   }
+  }
+  @{
+    if (@Model.GetScore()[0] == @Model.GetScore()[1])
+    {
+      <br><p>"DRAW!"</p><br>
+    }
+   }
